@@ -1,0 +1,30 @@
+{
+  "name": "survos/translatable-field-bundle",
+  "type": "symfony-bundle",
+  "description": "translatable-field-bundle Bundle",
+  "keywords": ["symfony", "easyadmin"],
+
+  "license": "MIT",
+  "require": {
+    "php": "^8.3",
+    "symfony/config": "^6.4 || ^7.1",
+    "symfony/dependency-injection": "^6.4 || ^7.1",
+    "symfony/http-kernel": "^6.4 || ^7.1",
+    "twig/twig": "^3.4",
+    "a2lix/translation-form-bundle": "^3.2",
+    "easycorp/easyadmin-bundle": "^4.24",
+    "phpstan/phpstan": "^2.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Survos\\TranslatableFieldBundle\\": "src/"
+    }
+  },
+  "require-dev": {
+    "symfony/browser-kit": "^6.4 || ^7.1",
+    "symfony/framework-bundle": "^6.4 || ^7.1",
+    "symfony/phpunit-bridge": "^6.4 || ^7.1",
+    "symfony/twig-bundle": "^6.4 || ^7.1",
+    "symfony/var-dumper": "^6.4 || ^7.1"
+  }
+}
