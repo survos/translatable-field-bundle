@@ -14,13 +14,15 @@ class TranslationsField implements FieldInterface
 
     public static function new(string $propertyName, ?string $label = null): self
     {
+        $formThemePath = realpath(__DIR__ . '/../../../templates/field/translations.html.twig');
+        assert(file_exists($formThemePath), $formThemePath);
         return (new self())
             ->setProperty($propertyName)
             ->setLabel($label)
             ->onlyOnForms()
             ->setRequired(true)
-            ->addFormTheme('admin/crud/form/field/translations.html.twig')
-            ->addCssFiles('build/translations-field.css')
+//            ->addFormTheme($formThemePath)
+//            ->addCssFiles('build/translations-field.css')
             ->setFormType(TranslationsType::class)
             ->setFormTypeOption('block_prefix', 'translations_field')
             ;

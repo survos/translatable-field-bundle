@@ -4,6 +4,7 @@
 namespace Survos\TranslatableFieldBundle;
 
 use Survos\TranslatableFieldBundle\EasyAdmin\Field\Configurator\TranslationsConfigurator;
+use Survos\TranslatableFieldBundle\EasyAdmin\Field\TranslationsField;
 use Survos\TranslatableFieldBundle\Form\Extension\TranslationsTypeExtension;
 use Symfony\Component\Config\Definition\Configurator\DefinitionConfigurator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -17,6 +18,8 @@ class SurvosTranslatableFieldBundle extends AbstractBundle
     public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
     {
         // $builder->setParameter('survos_workflow.direction', $config['direction']);
+
+//        $builder->autowire(TranslationsField::class)->setPublic(true);
 
         $builder->autowire(TranslationsConfigurator::class)
             ->setAutoconfigured(true)
