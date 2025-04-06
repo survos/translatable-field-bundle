@@ -14,15 +14,14 @@ class TranslationsField implements FieldInterface
 
     public static function new(string $propertyName, ?string $label = null): self
     {
-        $formThemePath = realpath(__DIR__ . '/../../../templates/field/translations.html.twig');
-        assert(file_exists($formThemePath), $formThemePath);
+        $formThemePath = '@SurvosTranslatableField/field/translations.html.twig';
         return (new self())
             ->setProperty($propertyName)
             ->setLabel($label)
             ->onlyOnForms()
             ->setRequired(true)
-//            ->addFormTheme($formThemePath)
-//            ->addCssFiles('build/translations-field.css')
+            ->addFormTheme($formThemePath)
+            ->addCssFiles('/bundles/survostranslatablefield/style.css')
             ->setFormType(TranslationsType::class)
             ->setFormTypeOption('block_prefix', 'translations_field')
             ;
